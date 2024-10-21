@@ -32,13 +32,6 @@ jobs:
       # Checkout the repository to the GitHub Actions runner
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Install PowerShell
-        run: |
-          dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.4.5/powershell-7.4.5-1.rh.x86_64.rpm
-          echo "Installation successful."
-          # mv prod.repo /etc/yum.repos.d/microsoft.repo
-          # dnf install -y powershell
           
       - name: Run extractor without Config Yaml
         if: ${{ github.event.inputs.CONFIGURATION_YAML_PATH == 'Extract All APIs' }}
